@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookstore — контакты</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page-bg">
+
+    <!-- Тёмный герой-блок сверху -->
+    <section class="hero">
+          <header class="header header--bar">
+            <!-- Левая группа: гамбургер + логотип -->
+            <div class="left-group">
+              <button class="hamburger" id="hamburgerBtn" aria-label="Меню">
+                <span></span><span></span><span></span>
+              </button>
+              <div class="logo logo--bar">
+                <span class="logo-text">BookTour</span>
+              </div>
+            </div>
+
+            <!-- Правая группа: пользователь + корзина -->
+            <div class="header-actions">
+              <div class="user-area" id="userArea"></div>
+              <div class="cart cart--bar">
+                <span class="cart__icon">🛒</span>
+                <span class="cart__label">Корзина</span>
+                <span class="cart__count" id="cartCount">0</span>
+              </div>
+            </div>
+
+            <!-- Мобильное меню (выезжает слева) – содержит все ссылки -->
+            <div class="mobile-menu" id="mobileMenu">
+              <nav class="mobile-nav">
+                <a href="index.html">Главная</a>
+                <a href="gallery.html">Каталог</a>
+                <a href="reviews.html">Отзывы</a>
+                <a href="contacts.html">Контакты</a>
+                <hr>
+                <a href="#">Мероприятия</a>
+                <a href="#">Подарочные сертификаты</a>
+                <a href="#">Программа лояльности</a>
+              </nav>
+            </div>
+      </header>
+    </section>
+
+    <!-- Белый корпус страницы -->
+    <div class="container">
+      <main class="main-content">
+
+        <section class="gallery-block">
+          <h1>Контакты и достижения</h1>
+          <p>Bookstore — это онлайн‑библиотека и магазин, где собраны лучшие книги разных жанров для внимательных читателей.</p>
+
+          <!-- Блок с цифрами -->
+          <section class="bottom-section" aria-label="Достижения магазина">
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-number">48</span>
+                <span class="stat-label">книг в каталоге</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">120</span>
+                <span class="stat-label">постоянных читателей</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">97%</span>
+                <span class="stat-label">положительных отзывов</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Контакты -->
+          <section class="bottom-section" aria-label="Как с нами связаться" style="margin-top: 20px;">
+            <h2>Как с нами связаться</h2>
+            <p>Вы можете задать вопросы о заказах, наличии книг и условиях доставки любым удобным способом.</p>
+
+            <ul class="standards-list">
+              <li><strong>Телефон:</strong> <a href="tel:+79991234567">+7 999 123‑45‑67</a></li>
+              <li><strong>Email:</strong> <a href="mailto:info@bookstore.ru">info@bookstore.ru</a></li>
+              <li><strong>Адрес:</strong> г. Нижний Новгород, ул. Примерная, д. 1</li>
+            </ul>
+          </section>
+
+          <!-- Форма обратной связи -->
+          <section class="bottom-section" aria-label="Форма обратной связи" style="margin-top: 20px;">
+            <h2>Написать нам</h2>
+            <form class="review-form" id="contactForm">
+              <div class="form-row">
+                <label for="contact-name">Ваше имя</label>
+                <input type="text" id="contact-name" name="contact-name" required>
+              </div>
+
+              <div class="form-row">
+                <label for="contact-email">Email</label>
+                <input type="email" id="contact-email" name="contact-email" required>
+              </div>
+
+              <div class="form-row">
+                <label for="contact-message">Сообщение</label>
+                <textarea id="contact-message" name="contact-message" rows="4" required></textarea>
+              </div>
+
+              <button type="submit" class="btn">Отправить сообщение</button>
+              <div id="contactMessage" style="margin-top:12px;"></div>
+            </form>
+          </section>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>
+          <span>Email: <a href="mailto:info@bookstore.ru">info@bookstore.ru</a></span>
+          <span>Телефон: <a href="tel:+79991234567">+7 999 123‑45‑67</a></span>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Главная</a>
+          <a href="gallery.html">Каталог</a>
+          <a href="reviews.html">Отзывы</a>
+        </div>
+        <p>© 2025 Bookstore. Все права защищены.</p>
+      </footer>
+    </div>
+  </div>
+
+<script src="/lib/global.js"></script>
+<script>
+  document.getElementById('contactForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('contact-name').value.trim();
+    const email = document.getElementById('contact-email').value.trim();
+    const message = document.getElementById('contact-message').value.trim();
+    const messageDiv = document.getElementById('contactMessage');
+    if (!name || !email || !message) {
+      messageDiv.innerHTML = '<p style="color:#c00;">Заполните все поля</p>';
+      return;
+    }
+    try {
+      const res = await fetch('/api/feedback/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message })
+      });
+      const result = await res.json();
+      if (result.success) {
+        messageDiv.innerHTML = '<p style="color:#2e7d32;">' + result.message + '</p>';
+        e.target.reset();
+      } else {
+        messageDiv.innerHTML = '<p style="color:#c00;">' + (result.error || 'Ошибка') + '</p>';
+      }
+    } catch (err) {
+      messageDiv.innerHTML = '<p style="color:#c00;">Ошибка соединения</p>';
+    }
+  });
+</script>
+
+<script src="/main/main1.js"></script>
+<script src="/main/main2.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+[
+  {
+    "id": "scifi",
+    "genre": "Фантастика",
+    "books": [
+      {
+        "id": 1,
+        "title": "1984",
+        "author": "Джордж Оруэлл",
+        "price": 750,
+        "cover": "https://avatars.mds.yandex.net/get-mpic/3985831/2a00000192064a0699072bce8283b40253de/orig"
+      },
+      {
+        "id": 2,
+        "title": "У меня нет рта, но я должен кричать",
+        "author": "Харлан Эллисон",
+        "price": 1570,
+        "cover": "https://i.pinimg.com/550x/0c/fc/b6/0cfcb609c1be4f86ed764c6767eeff4e.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Скотный двор",
+        "author": "Джордж Оруэлл",
+        "price": 521,
+        "cover": "https://avatars.mds.yandex.net/get-mpic/16342806/2a0000019909d533dd1dc039986e7c0b6fe5/orig"
+      },
+      {
+        "id": 4,
+        "title": "Пикник на обочине",
+        "author": "А. и Б. Стругацкие",
+        "price": 496,
+        "cover": "https://avatars.mds.yandex.net/get-mpic/14360956/2a00000196d77c58219c5f15f3b693a51644/orig"
+      },
+      {
+        "id": 5,
+        "title": "Собачье сердце",
+        "author": "Михаил Булгаков",
+        "price": 156,
+        "cover": "https://ir.ozone.ru/s3/multimedia-2/6443697230.jpg"
+      }
+    ]
+  },
+  {
+    "id": "it",
+    "genre": "Руководства по IT",
+    "books": [
+      {
+        "id": 6,
+        "title": "Java. Полное руководство",
+        "author": "Герберт Шилдт",
+        "price": 1500,
+        "cover": "https://avatars.mds.yandex.net/get-marketpic/1583642/pic8dcb0804fa0829f90314a6b34961913c/orig"
+      },
+      {
+        "id": 7,
+        "title": "Современный JavaScript",
+        "author": "Кей С. Хорстман",
+        "price": 980,
+        "cover": "https://ir.ozone.ru/s3/multimedia-6/6426719958.jpg"
+      },
+      {
+        "id": 8,
+        "title": "Изучаем Python",
+        "author": "Марк Лутц",
+        "price": 1350,
+        "cover": "https://i.pinimg.com/originals/ed/85/28/ed85285c2ca9c1895cb1edbdd02512b8.jpg"
+      }
+    ]
+  },
+  {
+    "id": "chronicles",
+    "genre": "Летописи и хроники",
+    "books": [
+      {
+        "id": 9,
+        "title": "Хроники Союза Королевств",
+        "author": "Анна Дашевская",
+        "price": 870,
+        "cover": "https://avatars.mds.yandex.net/i?id=d2335be1adeeba9206d970405d3c4468_l-3608959-images-thumbs&n=13"
+      },
+      {
+        "id": 10,
+        "title": "История СССР",
+        "author": "Сераев С. А.",
+        "price": 209,
+        "cover": "https://cdn1.ozone.ru/s3/multimedia-9/c600/6684263649.jpg"
+      }
+    ]
+  },
+  {
+    "id": "comics",
+    "genre": "Графические романы",
+    "books": [
+      {
+        "id": 11,
+        "title": "BERSERK: DELUXE EDITION",
+        "author": "Кентаро Миура",
+        "price": 15530,
+        "cover": "https://ir.ozone.ru/s3/multimedia-e/6443662754.jpg"
+      },
+      {
+        "id": 12,
+        "title": "V значит Вендетта",
+        "author": "Алан Мур и Дэвид Ллойд",
+        "price": 3620,
+        "cover": "https://content.img-gorod.ru/pim/products/images/65/0b/018f5cfa-932e-71ea-9303-6cddc010650b.jpg?width=918&height=1067&fit=bounds"
+      }
+    ]
+  },
+  {
+    "id": "horror",
+    "genre": "Ужасы",
+    "books": [
+      {
+        "id": 13,
+        "title": "ОНО",
+        "author": "Стивен Кинг",
+        "price": 1130,
+        "cover": "https://avatars.mds.yandex.net/get-mpic/5254518/2a000001920bee3003fb93554343bd92f7b2/orig"
+      }
+    ]
+  },
+  {
+    "id": "music",
+    "genre": "Музыкальная литература",
+    "books": [
+      {
+        "id": 14,
+        "title": "The Beatles",
+        "author": "Хантер Дэвис",
+        "price": 810,
+        "cover": "https://static10.labirint.ru/books/913802/cover.jpg"
+      }
+    ]
+  },
+  {
+    "id": "russian",
+    "genre": "Русская литература",
+    "books": [
+      {
+        "id": 15,
+        "title": "Война и мир",
+        "author": "Лев Толстой",
+        "price": 1200,
+        "cover": "https://i.pinimg.com/736x/09/60/56/096056f946ce69d9fd458ca3e9a39acf.jpg"
+      }
+    ]
+  }
+]

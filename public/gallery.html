@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookstore — каталог</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page-bg">
+
+    <!-- Тёмный герой-блок сверху -->
+    <section class="hero">
+        <header class="header header--bar">
+          <!-- Левая группа: гамбургер + логотип -->
+          <div class="left-group">
+            <button class="hamburger" id="hamburgerBtn" aria-label="Меню">
+              <span></span><span></span><span></span>
+            </button>
+            <div class="logo logo--bar">
+              <span class="logo-text">BookTour</span>
+            </div>
+          </div>
+
+
+          <!-- Правая группа: пользователь + корзина -->
+          <div class="header-actions">
+            <div class="user-area" id="userArea"></div>
+            <div class="cart cart--bar">
+              <span class="cart__icon">🛒</span>
+              <span class="cart__label">Корзина</span>
+              <span class="cart__count" id="cartCount">0</span>
+            </div>
+          </div>
+
+          <!-- Мобильное меню (выезжает слева) – содержит все ссылки -->
+          <div class="mobile-menu" id="mobileMenu">
+            <nav class="mobile-nav">
+              <a href="index.html">Главная</a>
+              <a href="gallery.html">Каталог</a>
+              <a href="reviews.html">Отзывы</a>
+              <a href="contacts.html">Контакты</a>
+              <hr>
+              <a href="#">Мероприятия</a>
+              <a href="#">Подарочные сертификаты</a>
+              <a href="#">Программа лояльности</a>
+            </nav>
+          </div>
+        </header>
+
+    </section>
+
+    <!-- Белый корпус страницы -->
+    <div class="container">
+      <main class="main-content">
+
+        <section class="gallery-block">
+          <h1>Каталог книг</h1>
+
+          <!-- ФАНТАСТИКА -->
+          <section class="genre-section genre-section--scifi" id="genre-scifi">
+            <h2>ФАНТАСТИКА</h2>
+            <div class="genre-books-row">
+              <article class="book-card book-card--mini">
+                <img src="https://avatars.mds.yandex.net/get-mpic/3985831/2a00000192064a0699072bce8283b40253de/orig" alt="1984">
+                <h3>1984</h3>
+                <p class="book-card__author">Джордж Оруэлл</p>
+                <p class="book-card__price" data-base-price="750">750 ₽</p>
+                <button class="btn btn--small js-add-to-cart" data-id="1">Положить в корзину</button>
+              </article>
+
+              <article class="book-card book-card--mini">
+                <img src="https://i.pinimg.com/550x/0c/fc/b6/0cfcb609c1be4f86ed764c6767eeff4e.jpg" alt="У меня нет рта, но я должен кричать">
+                <h3>У меня нет рта, но я должен кричать</h3>
+                <p class="book-card__author">Харлан Эллисон</p>
+                <p class="book-card__price " data-base-price="1570">1 570 ₽</p>
+                <button class="btn btn--small js-add-to-cart" data-id="2">Положить в корзину</button>
+              </article>
+
+              <article class="book-card book-card--mini">
+                <img src="https://avatars.mds.yandex.net/get-mpic/16342806/2a0000019909d533dd1dc039986e7c0b6fe5/orig" alt="Скотный двор">
+                <h3>Скотный двор</h3>
+                <p class="book-card__author">Джордж Оруэлл</p>
+                <p class="book-card__price" data-base-price="521">521 ₽</p>
+                <button class="btn btn--small js-add-to-cart" data-id="3">Положить в корзину</button>
+              </article>
+
+              <article class="book-card book-card--mini">
+                <img src="https://avatars.mds.yandex.net/get-mpic/14360956/2a00000196d77c58219c5f15f3b693a51644/orig" alt="Пикник на обочине">
+                <h3>Пикник на обочине</h3>
+                <p class="book-card__author">А. и Б. Стругацкие</p>
+                <p class="book-card__price" data-base-price="496">496 ₽</p>
+                <button class="btn btn--small js-add-to-cart" data-id="4">Положить в корзину</button>
+              </article>
+
+              <article class="book-card book-card--mini">
+                <img src="https://ir.ozone.ru/s3/multimedia-2/6443697230.jpg" alt="Собачье сердце">
+                <h3>Собачье сердце</h3>
+                <p class="book-card__author">Михаил Булгаков</p>
+                <p class="book-card__price" data-base-price="156">156 ₽</p>
+                <button class="btn btn--small js-add-to-cart" data-id="5">Положить в корзину</button>
+              </article>
+            </div>
+          </section>
+
+          <!-- РУКОВОДСТВА ПО IT -->
+          <section class="genre-section genre-section--it" id="genre-it">
+            <h2>РУКОВОДСТВА ПО IT</h2>
+            <div class="genre-books-row">
+              <article class="book-card book-card--mini">
+                <img src="https://avatars.mds.yandex.net/get-marketpic/1583642/pic8dcb0804fa0829f90314a6b34961913c/orig" alt="Java. Полное руководство">
+                <h3>Java. Полное руководство</h3>
+                <p class="book-card__author">Герберт Шилдт</p>
+                <p class="book-card__price" data-base-price="1500">1 500 ₽</p>
+                <button class="btn js-add-to-cart" data-id="6">Положить в корзину</button>
+              </article>
+
+              <article class="book-card book-card--mini">
+                <img src="https://ir.ozone.ru/s3/multimedia-6/6426719958.jpg" alt="Современный JavaScript">
+                <h3>Современный JavaScript</h3>
+                <p class="book-card__author">Кей С. Хорстман</p>
+                <p class="book-card__price" data-base-price="980">980 ₽</p>
+                <button class="btn js-add-to-cart" data-id="7">Положить в корзину</button>
+              </article>
+
+              <article class="book-card book-card--mini">
+                <img src="https://i.pinimg.com/originals/ed/85/28/ed85285c2ca9c1895cb1edbdd02512b8.jpg" alt="Изучаем Python">
+                <h3>Изучаем Python</h3>
+                <p class="book-card__author">Марк Лутц</p>
+                <p class="book-card__price" data-base-price="1350">1 350 ₽</p>
+                <button class="btn js-add-to-cart" data-id="8">Положить в корзину</button>
+              </article>
+            </div>
+          </section>
+
+          <!-- ЛЕТОПИСИ И ХРОНИКИ -->
+          <section class="genre-section genre-section--chronicles" id="genre-chronicles">
+            <h2>ЛЕТОПИСИ И ХРОНИКИ</h2>
+            <div class="genre-books-row">
+              <article class="book-card book-card--mini">
+                <img src="https://avatars.mds.yandex.net/i?id=d2335be1adeeba9206d970405d3c4468_l-3608959-images-thumbs&n=13" alt="Хроники Союза Королевств">
+                <h3>Хроники Союза Королевств</h3>
+                <p class="book-card__author">Анна Дашевская</p>
+                <p class="book-card__price" data-base-price="870">870 ₽</p>
+                <button class="btn js-add-to-cart" data-id="9">Положить в корзину</button>
+              </article>
+
+              <article class="book-card book-card--mini">
+                <img src="https://cdn1.ozone.ru/s3/multimedia-9/c600/6684263649.jpg" alt="История СССР">
+                <h3>История СССР</h3>
+                <p class="book-card__author">Сераев С. А.</p>
+                <p class="book-card__price" data-base-price="209">209 ₽</p>
+                <button class="btn js-add-to-cart" data-id="10">Положить в корзину</button>
+              </article>
+            </div>
+          </section>
+
+          <!-- ГРАФИЧЕСКИЕ РОМАНЫ -->
+          <section class="genre-section genre-section--comics" id="genre-comics">
+            <h2>ГРАФИЧЕСКИЕ РОМАНЫ</h2>
+            <div class="genre-books-row">
+              <article class="book-card book-card--mini">
+                <img src="https://ir.ozone.ru/s3/multimedia-e/6443662754.jpg" alt="BERSERK: DELUXE EDITION">
+                <h3>BERSERK: DELUXE EDITION</h3>
+                <p class="book-card__author">Кентаро Миура</p>
+                <p class="book-card__price" data-base-price="15530">15 530 ₽</p>
+                <button class="btn js-add-to-cart" data-id="11">Положить в корзину</button>
+              </article>
+
+              <article class="book-card book-card--mini">
+                <img src="https://content.img-gorod.ru/pim/products/images/65/0b/018f5cfa-932e-71ea-9303-6cddc010650b.jpg?width=918&height=1067&fit=bounds" alt="V значит Вендетта">
+                <h3>V значит Вендетта</h3>
+                <p class="book-card__author">Алан Мур и Дэвид Ллойд</p>
+                <p class="book-card__price" data-base-price="3620">3 620 ₽</p>
+                <button class="btn js-add-to-cart" data-id="12">Положить в корзину</button>
+              </article>
+            </div>
+          </section>
+
+          <!-- УЖАСЫ -->
+          <section class="genre-section genre-section--horror" id="genre-horror">
+            <h2>УЖАСЫ</h2>
+            <div class="genre-books-row">
+              <article class="book-card book-card--mini">
+                <img src="https://avatars.mds.yandex.net/get-mpic/5254518/2a000001920bee3003fb93554343bd92f7b2/orig" alt="ОНО">
+                <h3>ОНО</h3>
+                <p class="book-card__author">Стивен Кинг</p>
+                <p class="book-card__price" data-base-price="1130">1 130 ₽</p>
+                <button class="btn js-add-to-cart" data-id="13">Положить в корзину</button>
+              </article>
+            </div>
+          </section>
+
+          <!-- МУЗЫКАЛЬНАЯ ЛИТЕРАТУРА -->
+          <section class="genre-section genre-section--music" id="genre-music">
+            <h2>МУЗЫКАЛЬНАЯ ЛИТЕРАТУРА</h2>
+            <div class="genre-books-row">
+              <article class="book-card book-card--mini">
+                <img src="https://static10.labirint.ru/books/913802/cover.jpg" alt="The Beatles">
+                <h3>The Beatles</h3>
+                <p class="book-card__author">Хантер Дэвис</p>
+                <p class="book-card__price" data-base-price="810">810 ₽</p>
+                <button class="btn js-add-to-cart" data-id="14">Положить в корзину</button>
+              </article>
+            </div>
+          </section>
+
+          <!-- РУССКАЯ ЛИТЕРАТУРА -->
+          <section class="genre-section genre-section--russian" id="genre-russian">
+            <h2>РУССКАЯ ЛИТЕРАТУРА</h2>
+            <div class="genre-books-row">
+              <article class="book-card book-card--mini">
+                <img src="https://i.pinimg.com/736x/09/60/56/096056f946ce69d9fd458ca3e9a39acf.jpg" alt="Война и Мир">
+                <h3>Война и мир</h3>
+                <p class="book-card__author">Лев Толстой</p>
+                <p class="book-card__price" data-base-price="1200">1 200 ₽</p>
+                <button class="btn js-add-to-cart" data-id="15">Положить в корзину</button>
+              </article>
+            </div>
+          </section>
+
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>
+          <span>Email: <a href="mailto:info@bookstore.ru">info@bookstore.ru</a></span>
+          <span>Телефон: <a href="tel:+79991234567">+7 999 123‑45‑67</a></span>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Главная</a>
+          <a href="reviews.html">Отзывы</a>
+          <a href="contacts.html">Контакты</a>
+        </div>
+        <p>© 2025 Bookstore. Все права защищены.</p>
+      </footer>
+    </div>
+  </div>
+
+<script src="/lib/global.js"></script>
+<script src="/main/main1.js"></script>
+<script src="/main/main2.js"></script>
+<script>
+  (function openGenreFromHash() {
+    const hash = window.location.hash.slice(1); // убираем #
+    if (!hash) return;
+
+    // Ждём, пока аккордеон инициализируется (main2.js выполняется в DOMContentLoaded)
+    const checkInterval = setInterval(() => {
+      const targetSection = document.getElementById(`genre-${hash}`);
+      const targetRow = targetSection?.querySelector('.genre-books-row');
+      if (targetRow) {
+        // Скрываем все ленты
+        document.querySelectorAll('.genre-section .genre-books-row').forEach(row => {
+          row.style.display = 'none';
+        });
+        // Показываем нужную
+        targetRow.style.display = 'flex';
+        clearInterval(checkInterval);
+      }
+    }, 100);
+  })();
+</script>
+
+</body>
+</html>

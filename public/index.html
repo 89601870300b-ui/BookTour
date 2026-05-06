@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>BookTour — онлайн‑книжный</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="page-bg">
+    <!-- Тёмный герой-блок сверху -->
+   <section class="hero">
+          <header class="header header--bar">
+            <!-- Левая группа: гамбургер + логотип -->
+            <div class="left-group">
+              <button class="hamburger" id="hamburgerBtn" aria-label="Меню">
+                <span></span><span></span><span></span>
+              </button>
+              <div class="logo logo--bar">
+                <span class="logo-text">BookTour</span>
+              </div>
+            </div>
+
+         
+
+            <!-- Правая группа: пользователь + корзина -->
+            <div class="header-actions">
+              <div class="user-area" id="userArea"></div>
+              <div class="cart cart--bar">
+                <span class="cart__icon">🛒</span>
+                <span class="cart__label">Корзина</span>
+                <span class="cart__count" id="cartCount">0</span>
+              </div>
+            </div>
+
+            <!-- Мобильное меню (выезжает слева) – содержит все ссылки -->
+            <div class="mobile-menu" id="mobileMenu">
+              <nav class="mobile-nav">
+                <a href="index.html">Главная</a>
+                <a href="gallery.html">Каталог</a>
+                <a href="reviews.html">Отзывы</a>
+                <a href="contacts.html">Контакты</a>
+                <hr>
+                <a href="#">Мероприятия</a>
+                <a href="#">Подарочные сертификаты</a>
+                <a href="#">Программа лояльности</a>
+              </nav>
+            </div>
+          </header>
+
+
+        <div class="book-regress">
+          <div class="regress-title">
+            <span class="regress-line">I WANT A</span>
+            <span class="regress-line">BETTER</span>
+            <span class="regress-line">CATASTROPHE</span>
+          </div>
+        </div>
+    </section>
+
+    <!-- Белый контейнер ниже героя -->
+    <main class="container">
+      <section class="main-content">
+
+        <section class="hero-block">
+          <div class="hero-text">
+            <h1>Онлайн‑книжный BookTour</h1>
+            <p>
+              Современное книжное пространство для тех, 
+              кто читает не по обязанности, а по любви.
+              Здесь соседствуют дерзкая фантастика, 
+              мрачный хоррор, живые IT‑гайды и честный
+              нон‑фикшн, который помогает разбираться в мире, 
+              а не пылиться на полке.  
+              Выбирайте новинки, собирайте коллекцию и 
+              делитесь отзывами. Удобная навигация
+              позволяет искать книги по жанрам, темам, 
+              авторам и тегам, а персональные подборки
+              помогают не потеряться в новинках и быстро находить именно «своё».
+            </p>
+          </div>
+
+          <div class="hero-covers-slider">
+            <img src="https://avatars.mds.yandex.net/get-mpic/4372959/2a00000191995f4bec1a4bdb63563b3030e0/orig" alt="Государь" class="hero-slide hero-slide--active">
+            <img src="https://ir.ozone.ru/s3/multimedia-1-t/7043072429.jpg" alt="Java" class="hero-slide hero-slide--active">
+            <img src="https://main-cdn.sbermegamarket.ru/big1/hlr-system/-53/419/542/102/818/3/100071427804b0.jpg" alt="Java" class="hero-slide hero-slide--active">
+            <img src="https://avatars.mds.yandex.net/get-mpic/11004988/2a0000018ae489fcdad2d52ae15f8fca5ae0/orig" alt="Java" class="hero-slide hero-slide--active">
+          </div>
+        </section>
+
+        <!-- Блок новинок -->
+        <section class="gallery-block">
+          <h2>Новинки и хитовые подборки:</h2>
+
+          <div class="featured-books" id="featured-books">
+            <article class="featured-book featured-book--active">
+              <h3>I HAVE NO MOUTH &amp; I MUST SCREAM</h3>
+              <p>Постапокалиптический рассказ Харлана Эллисона о мире искусственного интеллекта.</p>
+              <span class="price">1 570 ₽</span>
+            </article>
+
+            <article class="featured-book">
+              <h3>Программирование на Java</h3>
+              <p>Подробное руководство по языку Java с примерами и задачами.</p>
+              <span class="price">1 500 ₽</span>
+            </article>
+
+            <article class="featured-book">
+              <h3>Техно‑будни</h3>
+              <p>Книга о развитии современных технологий и их влиянии на повседневную жизнь.</p>
+              <span class="price">650 ₽</span>
+            </article>
+          </div>
+        </section>
+
+        <!-- Флешмоб -->
+        <section class="flashmob-block">
+          <h2>Флешмоб «Фантастическая неделя»</h2>
+          <p>
+            Купи любую книгу из раздела «Фантастика» в течение действия флешмоба и получи
+            дополнительный купон на скидку. До конца акции:
+          </p>
+          <div class="flashmob-timer" id="flashmob-timer">00:00:00</div>
+          <p class="flashmob-ended" id="flashmob-ended" hidden>
+            Флешмоб завершён, но книги ждут тебя всегда.
+          </p>
+
+          <button class="btn" id="flashmob-go">
+            Перейти к фантастике
+          </button>
+        </section>
+
+        <!-- Нижний блок со статистикой и стандартами -->
+        <section class="bottom-section">
+          <section class="stats-block">
+            <h2>Цифры BookTour</h2>
+            <div class="stats-grid">
+              <div class="stat-item">
+                <span class="stat-number">1200+</span>
+                <span class="stat-label">книг в каталоге</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">85%</span>
+                <span class="stat-label">покупателей возвращаются</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">доступ к вашей библиотеке</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="standards-block">
+            <h2>Наши стандарты</h2>
+            <ul class="standards-list">
+              <li><strong>Только проверенные издания.</strong> Никаких пиратских копий и серых переизданий.</li>
+              <li><strong>Честные отзывы.</strong> Модерация защищает от спама, но не от честной критики.</li>
+              <li><strong>Удобная доставка.</strong> Выбирайте курьера, постамат или полностью электронный формат.</li>
+            </ul>
+          </section>
+        </section>
+      </section>
+
+      <footer class="footer">
+        <div>
+          <span>© 2025 BookTour</span>
+          <span>Онлайн‑книжный для думающих людей</span>
+        </div>
+        <div class="footer-links">
+          <a href="gallery.html">Каталог</a>
+          <a href="reviews.html">Отзывы</a>
+          <a href="contacts.html">Контакты</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+<script src="/lib/global.js"></script>
+<script src="/main/main1.js"></script>
+<script src="/main/main2.js"></script>
+<script>
+  document.getElementById('flashmob-go')?.addEventListener('click', () => {
+    window.location.href = '/gallery.html#scifi';
+  });
+</script>
+
+</body>
+</html>

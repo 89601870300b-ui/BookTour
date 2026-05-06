@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookTour — Вход и регистрация</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .auth-container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .auth-tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    .auth-tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #555;
+      transition: all 0.2s;
+    }
+    .auth-tab.active {
+      color: #8b4513;
+      border-bottom: 2px solid #8b4513;
+    }
+    .auth-form {
+      display: none;
+    }
+    .auth-form.active {
+      display: block;
+    }
+    .auth-form .form-row {
+      margin-bottom: 15px;
+    }
+    .auth-form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+    .auth-form input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    .auth-message {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
+    }
+    .auth-message.error {
+      background: #ffe0e0;
+      color: #c00;
+    }
+    .auth-message.success {
+      background: #e0ffe0;
+      color: #2e7d32;
+    }
+  </style>
+</head>
+<body>
+<div class="page-bg">
+  <section class="hero">
+    <header class="header header--bar">
+      <!-- Левая группа: гамбургер + логотип -->
+      <div class="left-group">
+        <button class="hamburger" id="hamburgerBtn" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="logo logo--bar">
+          <span class="logo-text">BookTour</span>
+        </div>
+      </div>
+
+      <!-- Правая группа: пользователь + корзина -->
+      <div class="header-actions">
+        <div class="user-area" id="userArea"></div>
+        <div class="cart cart--bar">
+          <span class="cart__icon">🛒</span>
+          <span class="cart__label">Корзина</span>
+          <span class="cart__count" id="cartCount">0</span>
+        </div>
+      </div>
+
+      <!-- Мобильное меню (выезжает слева) – содержит все ссылки -->
+      <div class="mobile-menu" id="mobileMenu">
+        <nav class="mobile-nav">
+          <a href="index.html">Главная</a>
+          <a href="gallery.html">Каталог</a>
+          <a href="reviews.html">Отзывы</a>
+          <a href="contacts.html">Контакты</a>
+          <hr>
+          <a href="#">Мероприятия</a>
+          <a href="#">Подарочные сертификаты</a>
+          <a href="#">Программа лояльности</a>
+        </nav>
+      </div>
+    </header>
+
+  </section>
+
+  <div class="container">
+    <main class="main-content">
+      <div class="auth-container">
+        <h1>Вход / Регистрация</h1>
+        <p>Войдите в свой аккаунт или зарегистрируйтесь, чтобы оставлять отзывы и управлять заказами.</p>
+
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-tab="login">Вход</button>
+          <button class="auth-tab" data-tab="register">Регистрация</button>
+        </div>
+
+        <!-- Форма входа -->
+        <div id="loginForm" class="auth-form active">
+          <form id="loginFormElement">
+            <div class="form-row">
+              <label for="loginEmail">Email</label>
+              <input type="email" id="loginEmail" name="email" required placeholder="example@mail.ru">
+            </div>
+            <div class="form-row">
+              <label for="loginPassword">Пароль</label>
+              <input type="password" id="loginPassword" name="password" required placeholder="••••••">
+            </div>
+            <button type="submit" class="btn" style="width:100%;">Войти</button>
+          </form>
+          <div id="loginMessage" class="auth-message"></div>
+        </div>
+
+        <!-- Форма регистрации -->
+        <div id="registerForm" class="auth-form">
+          <form id="registerFormElement">
+            <div class="form-row">
+              <label for="regName">Имя</label>
+              <input type="text" id="regName" name="name" required placeholder="Ваше имя">
+            </div>
+            <div class="form-row">
+              <label for="regEmail">Email</label>
+              <input type="email" id="regEmail" name="email" required placeholder="example@mail.ru">
+            </div>
+            <div class="form-row">
+              <label for="regPassword">Пароль</label>
+              <input type="password" id="regPassword" name="password" required placeholder="минимум 6 символов" minlength="6">
+            </div>
+            <button type="submit" class="btn" style="width:100%;">Зарегистрироваться</button>
+          </form>
+          <div id="registerMessage" class="auth-message"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <span>Email: <a href="mailto:info@bookstore.ru">info@bookstore.ru</a></span>
+        <span>Телефон: <a href="tel:+79991234567">+7 999 123‑45‑67</a></span>
+      </div>
+      <div class="footer-links">
+        <a href="/">Главная</a>
+        <a href="/gallery.html">Каталог</a>
+        <a href="/reviews.html">Отзывы</a>
+        <a href="/contacts.html">Контакты</a>
+      </div>
+      <p>© 2025 BookTour. Все права защищены.</p>
+    </footer>
+  </div>
+</div>
+
+<script src="/lib/global.js"></script>
+<script>
+  // Переключение между формами
+  const tabs = document.querySelectorAll('.auth-tab');
+  const forms = {
+    login: document.getElementById('loginForm'),
+    register: document.getElementById('registerForm')
+  };
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      Object.values(forms).forEach(form => form.classList.remove('active'));
+      forms[target].classList.add('active');
+      document.getElementById('loginMessage').innerHTML = '';
+      document.getElementById('registerMessage').innerHTML = '';
+    });
+  });
+
+  // Обработка входа
+  document.getElementById('loginFormElement').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value.trim();
+    const password = document.getElementById('loginPassword').value;
+    const messageDiv = document.getElementById('loginMessage');
+    messageDiv.innerHTML = '';
+    try {
+      const res = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      });
+      const data = await res.json();
+      if (data.success) {
+        messageDiv.innerHTML = '<div class="auth-message success">Успешный вход! Перенаправление...</div>';
+        setTimeout(() => window.location.href = data.redirect || '/', 1000);
+      } else {
+        messageDiv.innerHTML = `<div class="auth-message error">${data.error || 'Ошибка входа'}</div>`;
+      }
+    } catch (err) {
+      messageDiv.innerHTML = '<div class="auth-message error">Ошибка соединения с сервером.</div>';
+    }
+  });
+
+  // Обработка регистрации
+  document.getElementById('registerFormElement').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('regName').value.trim();
+    const email = document.getElementById('regEmail').value.trim();
+    const password = document.getElementById('regPassword').value;
+    const messageDiv = document.getElementById('registerMessage');
+    messageDiv.innerHTML = '';
+    if (password.length < 6) {
+      messageDiv.innerHTML = '<div class="auth-message error">Пароль должен содержать минимум 6 символов.</div>';
+      return;
+    }
+    try {
+      const res = await fetch('/api/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password })
+      });
+      const data = await res.json();
+      if (data.success) {
+        messageDiv.innerHTML = '<div class="auth-message success">Регистрация успешна! Перенаправление...</div>';
+        setTimeout(() => window.location.href = data.redirect || '/', 1000);
+      } else {
+        messageDiv.innerHTML = `<div class="auth-message error">${data.error || 'Ошибка регистрации'}</div>`;
+      }
+    } catch (err) {
+      messageDiv.innerHTML = '<div class="auth-message error">Ошибка соединения с сервером.</div>';
+    }
+  });
+</script>
+</body>
+</html>

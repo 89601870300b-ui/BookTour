@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookstore — отзывы</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page-bg">
+
+    <!-- Тёмный герой-блок сверху -->
+    <section class="hero">
+      <header class="header header--bar">
+        <!-- Левая группа: гамбургер + логотип -->
+        <div class="left-group">
+          <button class="hamburger" id="hamburgerBtn" aria-label="Меню">
+            <span></span><span></span><span></span>
+          </button>
+          <div class="logo logo--bar">
+            <span class="logo-text">BookTour</span>
+          </div>
+        </div>
+
+        <!-- Правая группа: пользователь + корзина -->
+        <div class="header-actions">
+          <div class="user-area" id="userArea"></div>
+          <div class="cart cart--bar">
+            <span class="cart__icon">🛒</span>
+            <span class="cart__label">Корзина</span>
+            <span class="cart__count" id="cartCount">0</span>
+          </div>
+        </div>
+
+        <!-- Мобильное меню (выезжает слева) – содержит все ссылки -->
+        <div class="mobile-menu" id="mobileMenu">
+          <nav class="mobile-nav">
+            <a href="index.html">Главная</a>
+            <a href="gallery.html">Каталог</a>
+            <a href="reviews.html">Отзывы</a>
+            <a href="contacts.html">Контакты</a>
+            <hr>
+            <a href="#">Мероприятия</a>
+            <a href="#">Подарочные сертификаты</a>
+            <a href="#">Программа лояльности</a>
+          </nav>
+        </div>
+      </header>
+
+
+    </section>
+
+    <!-- Белый корпус страницы -->
+    <div class="container">
+      <main class="main-content">
+
+        <section class="gallery-block">
+          <h1>Отзывы о магазине</h1>
+          <p>Поделитесь своим опытом — это помогает улучшать сервис и подбирать ещё больше хороших книг.</p>
+
+          <!-- Форма отзыва -->
+          <section class="bottom-section" aria-label="Форма отзыва">
+            <h2>Оставить отзыв</h2>
+            <form class="review-form" id="reviewForm">
+              <div class="form-row">
+                <label for="name">Ваше имя</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+
+              <div class="form-row">
+                <label for="book">Книга</label>
+                <select id="book" name="book" required>
+                  <option value="" disabled selected>Выберите книгу</option>
+                  <option value="1984">1984</option>
+                  <option value="У меня нет рта, но я должен кричать">У меня нет рта, но я должен кричать</option>
+                  <option value="Скотный двор">Скотный двор</option>
+                  <option value="Пикник на обочине">Пикник на обочине</option>
+                  <option value="Собачье сердце">Собачье сердце</option>
+                  <option value="Java. Полное руководство">Java. Полное руководство</option>
+                  <option value="Современный JavaScript">Современный JavaScript</option>
+                  <option value="Изучаем Python">Изучаем Python</option>
+                  <option value="Хроники Союза Королевств">Хроники Союза Королевств</option>
+                  <option value="История СССР">История СССР</option>
+                  <option value="BERSERK: DELUXE EDITION">BERSERK: DELUXE EDITION</option>
+                  <option value="V значит Вендетта">V значит Вендетта</option>
+                  <option value="ОНО">ОНО</option>
+                  <option value="The Beatles">The Beatles</option>
+                  <option value="Война и мир">Война и мир</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label for="rating">Оценка</label>
+                <select id="rating" name="rating" required>
+                  <option value="5">5 — отлично</option>
+                  <option value="4">4 — хорошо</option>
+                  <option value="3">3 — нормально</option>
+                  <option value="2">2 — посредственно</option>
+                  <option value="1">1 — плохо</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <label for="text">Ваш отзыв</label>
+                <textarea id="text" name="text" rows="4" required></textarea>
+              </div>
+
+              <button type="submit" class="btn">Отправить отзыв</button>
+              <div id="formMessage" style="margin-top:12px;"></div>
+
+            </form>
+          </section>
+
+          <!-- Лента отзывов -->
+          <section class="bottom-section" aria-label="Отзывы читателей" style="margin-top: 20px;">
+            <h2>Отзывы читателей</h2>
+            <div id="reviewsList"> </div>
+          </section>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div>
+          <span>Email: <a href="mailto:info@bookstore.ru">info@bookstore.ru</a></span>
+          <span>Телефон: <a href="tel:+79991234567">+7 999 123‑45‑67</a></span>
+        </div>
+        <div class="footer-links">
+          <a href="index.html">Главная</a>
+          <a href="gallery.html">Каталог</a>
+          <a href="contacts.html">Контакты</a>
+        </div>
+        <p>© 2025 Bookstore. Все права защищены.</p>
+      </footer>
+    </div>
+  </div>
+
+<script src="/lib/global.js"></script>
+<script>
+  // ========== 1. Загрузка списка книг для выпадающего списка ==========
+  async function loadBooksList() {
+    try {
+      const res = await fetch('/api/products');
+      if (!res.ok) throw new Error('Не удалось загрузить книги');
+      const genres = await res.json();
+      const select = document.getElementById('book');
+      select.innerHTML = '<option value="" disabled selected>Выберите книгу</option>';
+      genres.forEach(genre => {
+        genre.books.forEach(book => {
+          const option = document.createElement('option');
+          option.value = book.title;
+          option.textContent = `${book.title} — ${book.author}`;
+          select.appendChild(option);
+        });
+      });
+    } catch (err) {
+      console.error(err);
+      const select = document.getElementById('book');
+      select.innerHTML = '<option disabled>Ошибка загрузки списка книг</option>';
+    }
+  }
+
+  // ========== 2. Загрузка и отображение отзывов ==========
+  async function loadReviews() {
+    const container = document.getElementById('reviewsList');
+    try {
+      const res = await fetch('/api/feedback/reviews');
+      if (!res.ok) throw new Error('Ошибка загрузки отзывов');
+      const reviews = await res.json();
+      if (reviews.length === 0) {
+        container.innerHTML = '<p>Пока нет отзывов. Будьте первым!</p>';
+        return;
+      }
+      container.innerHTML = '';
+      reviews.forEach(review => {
+        const article = document.createElement('article');
+        article.className = 'review-card';
+        article.innerHTML = `
+          <h3>${escapeHtml(review.name)}</h3>
+          <p class="review-card__meta">Оценка: ${review.rating}/5 • Книга: «${escapeHtml(review.book)}»</p>
+          <p class="review-card__text">${escapeHtml(review.text)}</p>
+        `;
+        container.appendChild(article);
+      });
+    } catch (err) {
+      console.error(err);
+      container.innerHTML = '<p style="color:#c00;">Не удалось загрузить отзывы. Попробуйте позже.</p>';
+    }
+  }
+
+  // ========== 3. Отправка нового отзыва ==========
+  async function submitReview(event) {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+    const data = {
+      name: formData.get('name'),
+      book: formData.get('book'),
+      rating: formData.get('rating'),
+      text: formData.get('text')
+    };
+
+    const messageDiv = document.getElementById('formMessage');
+    messageDiv.innerHTML = '';
+
+    try {
+      const res = await fetch('/api/feedback/reviews', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const result = await res.json();
+      if (result.success) {
+        messageDiv.innerHTML = `<p style="color:#2e7d32;">${result.message}</p>`;
+        form.reset();
+        loadReviews();  // обновить список
+        // сбросить select на "Выберите книгу"
+        document.getElementById('book').value = '';
+      } else {
+        messageDiv.innerHTML = `<p style="color:#c00;">${result.error || 'Ошибка при отправке'}</p>`;
+      }
+    } catch (err) {
+      messageDiv.innerHTML = '<p style="color:#c00;">Ошибка соединения с сервером.</p>';
+    }
+  }
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/[&<>]/g, function(m) {
+      if (m === '&') return '&amp;';
+      if (m === '<') return '&lt;';
+      if (m === '>') return '&gt;';
+      return m;
+    });
+  }
+
+  // ========== 4. Инициализация при загрузке страницы ==========
+  document.addEventListener('DOMContentLoaded', () => {
+    loadBooksList();
+    loadReviews();
+    document.getElementById('reviewForm').addEventListener('submit', submitReview);
+  });
+</script>
+<script src="/main/main1.js"></script>
+<script src="/main/main2.js"></script>
+
+</body>
+</html>
